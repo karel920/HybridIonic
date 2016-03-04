@@ -1,0 +1,440 @@
+@font-face {
+    font-family: 'WhitneyBook';
+    src: url('../fonts/WhitneyFontsWoff/WhitneyBook.WOFF') format("woff"), url('fonts/Whitney-Font-Family/WhitneyBook.eot'), url('fonts/WhitneyFontsTtf/WhitneyBook.ttf') format('truetype'), url('fonts/Whitney-Font-Family/WhitneyBook.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'WhitneyLight';
+    src: url('../fonts/WhitneyFontsWoff/WhitneyLight.WOFF') format("woff"), url('fonts/Whitney-Font-Family/WhitneyLight.eot'), url('fonts/WhitneyFontsTtf/WhitneyLight.ttf') format('truetype'), url('fonts/Whitney-Font-Family/Whitney-Light.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'WhitneyMedium';
+    src: url('../fonts/WhitneyFontsWoff/WhitneyMedium.WOFF') format("woff"), url('fonts/Whitney-Font-Family/WhitneyMedium.eot'), url('fonts/WhitneyFontsTtf/WhitneyMedium.ttf') format('truetype'), url('fonts/Whitney-Font-Family/Whitney-Medium.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ul, li {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+body{
+	font-size:21px;
+}
+
+#disposition-container{
+	background-color: #fff;
+	color:#333;
+}
+
+.disposition-header{
+	background-color:#000166;
+	color:#ffffff;
+	padding:15px;
+	text-align:center;
+	font-family:WhitneyBook;
+}
+.disposition-header .disposition-cancel{
+	float:left;
+	padding-top:7px;
+}
+.disposition-header .disposition-name{
+	text-align:center;
+}
+.disposition-header .disposition-name h1{
+	margin:0;
+	font-family:WhitneyMedium;
+	font-size:16px;
+}
+.disposition-header .disposition-name p{
+	font-family:WhitneyLight;
+	margin:0;
+	font-size:14px;
+}
+
+
+#disposition-content ul li{
+	padding:24px 15px;
+	border-bottom:1px solid #e5e5e5;
+}
+#disposition-content ul li p{
+	font-family:WhitneyBook;
+	float:left;
+	margin:0;
+}
+#disposition-content ul li img{
+    float: right;
+    height:15px;
+}
+
+.app-dialog{
+	margin:0;
+	position:absolute;
+	width:100%;
+	bottom:0;
+}
+
+.modal-content{
+	width: 400px;
+	 font-family: WhitneyBook;
+    font-size: 14px;
+    border-radius:0;
+}
+.modal-body{
+	text-align:center;
+}
+.leftText{
+	text-align:left;
+}
+.modal-body p{
+	padding: 15px 0;
+}
+
+.modal-backdrop{
+	position:relative;
+}
+.doneFilter{
+	position: absolute;
+    bottom: 2%;
+    width: 80%;
+    margin: 0 10%;
+}
+button{
+	background-color: rgb(0, 3, 106);
+	border: medium none;
+	color: rgb(255, 255, 255);
+	padding: 5px 58px;
+	border-radius: 20px;
+	font-family:WhitneyMedium;
+}
+.modal-footer{
+	background-color:#010066;
+}
+.modal-footer p{
+	margin:0;
+	padding:0;
+	text-align:center;
+	color:#fff;
+}
+
+
+@media screen and (min-width: 768px) {
+	.modal {
+	  text-align: center;
+	}
+	.modal:before {
+	    display: inline-block;
+	    vertical-align: middle;
+	    content: " ";
+	    height: 100%;
+	}
+	.modal-dialog {
+		top: 35%;
+    	left: 25%;
+	  display: inline-block;
+	  text-align: left;
+	  vertical-align: middle;
+	}
+}
+
+
+
+
+/* follow up page styles */
+
+.followup-container .disposition-header div{
+	display:inline-block;
+}
+.disposition-name {
+	display:inline-block;
+}
+.disposition-save{
+	float:right;
+	padding-top:7px;
+}
+.disposition-name p{
+	margin-top:5px !important;
+}
+.followup-details-head{
+	padding:30px 15px;;
+	color:#010066;
+	background-color:#ffffff;
+	border-bottom:1px solid #ccc;
+	
+}
+.followup-details-head h2{
+	font-family:WhitneyMedium;
+	margin:0;
+	font-size:0.75em;
+}
+.followup-details{
+	font-family:WhitneyBook;
+	font-size:0.75em;
+}
+.followup-time,.followup-addr,.followup-note{
+	border-bottom:1px solid #ccc;
+	padding:30px 15px;
+}
+.followup-time{
+	text-align:center;
+}
+.follow-text{
+	float:left;
+	color:#b4b4b4;
+}
+
+.follow-time{
+	float:right;
+}
+.followup-addr{
+	color:#000000;
+}
+.followup-addr p{
+	margin:0;
+}
+.followup-note textarea{
+	width:100%;
+	border:none;
+	resize:none;
+}
+/* follow up page styles */
+
+/* appointment page styles */
+
+.appointment-details-content h2{
+	font-size:0.75em;
+	font-family:WhitneyMedium;
+	margin:10px 0;
+	text-align:center;
+	color:#b3b4b6;
+}
+.appointment-details .threeradio{
+	font-size:0.625em;
+	text-align:center;
+	padding:0;
+	border-bottom:1px solid #ccc;
+}
+.appointment-details .checkbox_wrapper{
+	top:0;
+}
+.appointment-details .appointment-check p{
+	margin-top:-2px;
+	padding:0 12px 0 5px;
+	color:#000000;
+}
+.appointment-details .followup-addr{
+	
+}
+.appointment-details .followup-time,.appointment-details .followup-addr,
+.appointment-details .followup-note{
+	border-bottom:1px solid #ccc;
+	padding:10px 15px;
+}
+
+.appointment-details .followup-addr p{
+	margin:0 0 10px 0;
+}
+.followup-time div{
+	margin-bottom:5px;
+}
+
+
+
+/* appointment page styles */
+
+
+
+/* dispostion page by drj*/
+
+.disp-img{
+	margin-top: 0px;
+}
+
+.ul-font {
+	font-size: 14px;
+    font-weight: bold;
+}
+
+.disp-header{
+	font-size: 16px;
+}
+
+.disp-header span{
+	margin-left: 0px;
+}
+
+.disp-header div{
+	text-align: center;
+}
+.disp-header div p:nth-child(2){
+	margin:0px;
+}
+
+.occupation-dialog{
+	height: 73.5%;
+	position: absolute;
+	bottom: 13%;
+	width: 300px;
+	margin-left: 10%;
+}
+
+.occupation-dialog .modal-content{
+	width:300px;
+	height:470px;
+}
+.occupation-dialog .modal-body{
+	width:100%;
+	height: 90%;
+	position: absolute;
+	overflow: scroll;
+}
+
+.age-dialog{
+	height: 75%;
+	position: absolute;
+	bottom: 12%;
+	width: 300px;
+	margin-left: 10%;
+}
+
+.age-dialog .modal-content{
+	width:300px;
+	height:470px;
+}
+
+.age-dialog .modal-body{
+	width:100%;
+	height: 90%;
+	position: absolute;
+	overflow:scroll;
+}
+
+#ageModal,#occupationModal
+{
+	background-color:rgba(0,0,0,0.6);
+}
+@media only screen and (min-device-width: 412px) and (max-device-width: 659px) and (orientation : portrait) {
+	.occupation-dialog, .age-dialog{
+		margin-left:13%;
+	}
+	.age-dialog{
+		height:71.5%;
+		bottom: 14%;
+	}
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : portrait) {
+	.occupation-dialog, .age-dialog{
+		margin-left:8%;
+	}
+	.age-dialog{
+		height:73.5%;
+		bottom: 13%;
+	}
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+	.age-dialog{
+		left:58%;
+		top: 20%;
+	}
+	.occupation-dialog{
+		left: 58%;
+		top: 16%;
+	}
+}
+
+
+ .filter-choice ul li{
+ 	border-bottom:2px solid #F2F2F2;
+ 	padding:4px;
+ 	padding-left:0px;
+ 	font-size:14px;
+ 	color:#000;
+ 	padding-left:2px;
+ 	font-family:"WhitneyBook";
+ }
+ 
+ .filter-choice p{
+	padding: 11px 0;
+	margin: 0;
+ }
+ 
+ .filter-choice .checked{
+	background: url("../images/checkboxactive_blue.svg") no-repeat;
+	height:20px;
+	background-size:100% 100%;
+}
+.filter-choice .unchecked{
+	background: url("../images/checkboxnormal_blue.svg") no-repeat;
+	height:20px;
+	background-size:100% 100%;
+}
+
+.filter-choice .checkbox_wrapper{
+    position: relative;
+    height: 20px;
+    width: 20px;
+    display:inline-block;
+    top:0;
+	float: right;
+	margin-right:3px;
+
+}
+ .filter-choice ul li input
+ {
+ 	border:0px;
+ 	font-size:14px;
+	margin-left:3%;
+ }
+ 
+.filter-choice input[type="checkbox"]{
+    opacity:0;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.filter-choice input[type="checkbox"] + label{
+    background:url('../images/checkboxnormal_blue.svg') no-repeat;
+    background-size:100% 100%;
+    height: 20px;
+    width: 20px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.filter-choice input[type="checkbox"]:checked + label{
+    background:url('../images/checkboxactive_blue.svg') no-repeat;
+    background-size:100% 100%;
+    height: 20px;
+    width: 20px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+.filter-choice input:focus{
+    outline: 0;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+/* dispostion page by drj*/

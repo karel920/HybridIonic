@@ -1,0 +1,191 @@
+
+<header id='mobileOtherView' class="mobile">
+		<div class="header-content clearfix ">
+			<span class="header-toggle" ng-click='toggleNav($event)'>
+			 <img src="images/menu.svg" /></span>
+			
+		<div class="contact-date">
+            <form class="navbar-search  docs-search "  style="">
+				<span class="pull-left"><img src="images/search.svg" style="height:20px"></img></span>
+				<span class="pull-right"><img src="images/close_black.svg" class="search_cross" ng-click="clearTextValue()" ng-if="contact_filter.name.length > 0"></img></span>
+				<input type="text"  class="search-query" placeholder="Search" ng-model="contact_filter.name" ng-change="logFilteredList(contact_filter.name)">
+			</form>
+	</div>
+				<span class="search_close" ng-click='closeSearchView()'>CANCEL</span>
+		
+		</div>
+	
+</header>
+
+
+<!-- navigation panel start -->
+<div class="wrapper mobileNavPanel" ng-show='mobileNavToggleFlag' ng-click="navAnimate($event,mobileNavToggleFlag)" ng-class="mobileNavToggleFlag ? 'expandnav' : ''">
+	<div class="navigation" ng-controller="campaignCtrl">
+		<div class="nav-header">
+			<div class="nav-logo clearfix">
+				<span class="logoText">Mapping 
+                                        & Contacts</span>
+				<img class="hamburger" src="images/menu.svg"/>
+			</div>
+			<div class="agent-name">
+				<p>Joe Agent</p>
+			</div>
+			<div class="nav-status">
+				<div class="nav-body" ng-repeat="camp in campData | orderBy: sortByDate:true"
+									  ng-model="flag[$index]"  
+									  ng-init='$index > 0 ? flag[$index]= false : flag[$index]=true'
+									  ng-show='flag[$index]'>
+					<div class="nav-area clearfix">
+						<div class="navv-area-date"  ng-class="{'onHold': '{{camp.campaignStatus}}' === 'Hold'}">
+							{{camp.campaignName}}
+						</div>
+                        	                        	
+						<a class="nav-drop" data-toggle="" ng-click='displayCamp(flag[$index],$index)'>
+							<img src="images/downarrow.svg"/>
+						</a>
+					</div>
+					<div class="total-remaining">
+						<div class="total">
+							<div class="total-text"  ng-class="{'onHold': '{{camp.campaignStatus}}' === 'Hold'}">TOTAL</div>
+				            <div class="total-value" ng-class="{'onHold': '{{camp.campaignStatus}}' === 'Hold'}">
+                                {{camp.total}}
+                            </div>
+						</div>
+						<div class="remaining">
+							<div class="total-text" ng-class="{'onHold': '{{camp.campaignStatus}}' === 'Hold'}">REMAINING</div>
+							<div class="total-value" ng-class="{'onHold': '{{camp.campaignStatus}}' === 'Hold'}">                                                {{camp.remaining}}
+                            </div>
+						</div>
+						<div class="navv-area-date nav-area-status" ng-if="camp.campaignStatus == 'Hold'">
+							On Hold
+						</div>
+						
+						<div class="navv-area-date nav-area-status" ng-if="camp.campaignStatus != 'Hold'">
+							<img class="nav-img-done" src="images/checkboxactive_blue.svg">
+						</div>
+<!--
+                          <div class="normal checkbox_wrapper" style="float:right;margin-top: 22px;">
+										    <input type="checkbox">
+										    <label></label>
+				        </div>
+-->
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="nav-content">
+			<div class="nav-list-items">
+				<ul>
+					<li><a ui-sref='home.mapListView' ng-click="wrapperClose()">
+                        <img src="images/contactlist.svg"/>Contacts</a></li>
+					<li><a><img src="images/hotlist_blue.svg"/>Hotlist </a><span class="count count-list">2</span></li>
+					<li><a><img src="images/activities.svg"/>Activities </a><span class="count count-list">4</span></li>
+					<li><a><img src="images/dashboard.svg"/>Dashboard</a></li>
+					<li class="clearfix helpLink">
+						<span class="help">
+                            <img src="images/help.svg"/><a ui-sref='home.help' ng-click="">Help</a></span>
+						<span class="about">
+                            <img src="images/about.svg"/><a ui-sref='home.about' ng-click="">About</a><span>
+					</li>
+                            <li></li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="nav-footer">
+			<p><img src="images/sync.svg"/><span>Last Sync:</span><span> Oct 26 04:03</span></p>
+		</div>
+		
+	
+	</div>
+	
+	
+	<div>
+	</div>
+</div>
+<!-- navigation panel end -->
+<div class="search_contactList" ng-if="contact_filter.name.length <= 2 || contact_filter.name.length == undefined">
+    <div class="search_Text">Search results appear here</div>
+    </div>
+<div class="search_contactList" ng-if="contact_filter.name.length > 2">
+	<!-- custom directive will come here  -->
+	<ul>
+	<li>
+		<div id="{{'contactLayer'+$index}}"
+					  ng-model='displaySwipPanelFlag[$index]' 
+					  ng-init="displaySwipPanelFlag[$index] = false">
+			<div class="clearfix" ng-hide="displaySwipPanelFlag[$index]" 
+										   ng-click='displaySwipeLayer(displaySwipPanelFlag[$index],$index)'>    
+                  <div class="contacts clearfix" ng-repeat="member in filteredNames">
+                      <div class="" ui-sref='home.contactDetails({mobileNavToggleFlag : false})'>
+                    <img ng-src="images/disposition_icons/{{member.iconName}}.svg" class="contact-locate">
+					<span class="contact-detail">
+                        <p class="contact-name">{{member.firstname}} {{member.lastname}}</p>
+                        <p class="contact-addr">{{member.city}}, {{member.country}}</p></span>
+					<span><img  class="contact-arrow" src="images/rightarrow_grey.svg"></span>
+                     
+                      </div>
+				</div>
+			</div>
+			<!-- Swipe panel -->
+			<div class="contact-status"  ng-show="displaySwipPanelFlag[$index]"  
+                 ng-click='hideSwipePanel(displaySwipPanelFlag[$index],$index)'>
+				<div class="contact-status-arrow" >
+					<img src="images/rightarrow_black.svg">
+				</div>
+				<div class="contact-status-A viewOnMap">
+					<img src="images/mapview_white.svg">
+					<p>View on Map</p>
+				</div>
+				<div class="contact-status-B">
+					<img src="images/disposition.svg">
+					<p>Disposition</p>
+				</div>
+				<div class="contact-status-A">
+					<img src="images/notes.svg">
+					<p>Add Note</p>
+				</div>
+				<div class="contact-status-B">
+					<img src="images/hotlist.svg">
+					<p>Add to Hotlist</p>
+				</div>
+			</div>
+		</div>
+	</li>
+</ul> 
+    
+    <div class="search_contactList" ng-if="filteredNames.length == 0 && contact_filter.name.length > 2">
+        <div class="addcontact_container">
+            <span class="resultsPad">No Results Found</span>
+            <hr/>
+			<div class="searchcontact">
+			 <button class="addcontact-addbtn" style="padding: 5px 20px;">
+                 Create New Contact</button>
+			</div>
+		
+			 <div class="likeNamesContainer">
+                 <span class="suggestedname">SUGGESTED LIKE NAMES</span>
+                   <div class="contacts clearfix likeNames">
+                    <img ng-src="images/disposition_icons/dispos05.svg" class="contact-locate">
+					<span class="contact-detail"><p class="contact-name">John Matthew</p>
+                        <p class="contact-addr">Banglore, India</p></span>
+					<span><img  class="contact-arrow" src="images/rightarrow_grey.svg"></span>
+                     
+                      </div>
+                 
+                <div class="contacts clearfix likeNames">
+                    <img ng-src="images/disposition_icons/dispos10.svg" class="contact-locate">
+					<span class="contact-detail"><p class="contact-name">Johan Greesham</p>
+                        <p class="contact-addr">Texas, USA</p></span>
+					<span><img  class="contact-arrow" src="images/rightarrow_grey.svg"></span>
+                     
+                      </div>
+				</div>
+            </div>
+			
+			 </div>
+    </div>
+</div>
+    
+

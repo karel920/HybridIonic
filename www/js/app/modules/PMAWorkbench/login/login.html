@@ -1,0 +1,153 @@
+<div class="pma-login" >
+	<div class="login-form">
+		<div class="heading">
+			<img class="login_logo" src="images/PMA_Logo_full.png"/>
+			<!-- <h1>PMA<span>workbench</span></h1> -->
+		</div>
+		<div class="formcontainer text-center">
+			<form name="myForm" ng-submit="loginHome()">
+				<div class="input-field">
+					<input class="text-font" type="text" name="username" placeholder="User Name" autofocus ng-model-options="{ updateOn: 'blur' }" ng-model="userName" ng-class="errorusername" ng-minlength="6" ng-pattern="/^[A-z][A-z0-9]*$/" required/>
+					<div class="error-message" ng-show="!myForm.username.$error.required && !myForm.username.$error.pattern && myForm.username.$error.minlength && myForm.username.$dirty">Username must be at 6 characters</div>
+					<div class="error-message" ng-show="myForm.username.$error.pattern && myForm.username.$dirty">Only AlphaNumeric is Allowed</div>
+				</div>
+				<div class="input-field">
+					<input class="text-font" type="password" name="password" placeholder="Password"  ng-model="password" ng-minlength="6" ng-pattern="/^[A-z][A-z0-9]*$/"  required/>
+						</div>
+				<div class="nav-buttons clearfix">
+					<button class="pull-left"  class="alert alert-warning" style = "padding: 5px 27px;" ng-disabled="myForm.$invalid">Log in <span><img src="./images/rightarrow.svg"/></span></button>
+					<span data-toggle="modal" data-target="#forgetModal"><p class="pull-right" style ="color:#0d0d7d; margin:5px 0; font-size:14px; text-decoration: underline !important;">Forget password</p>
+					</span>
+				</div>
+				
+				<div class="modal1 fade" id="forgetModal" role="dialog" style="background-color:rgba(0,0,0,0.6);">
+			   	<div class="modal-dialog forget-dialog">
+			 
+			    <!-- Modal content-->
+				   	<div class="modal-content">
+			    	   	<div class="modal-body leftText">
+					   		<div class="filter-choice">
+							<ul><li><input type="text" placeholder="Please Enter Email ID"></li>
+				<li><input type="text" placeholder="Please verify your DOB"></li></ul>	
+					   		</div>
+					   	</div>
+					  <button class="modal-button forgetButton" data-dismiss="modal">Done</button>
+					</div>
+					</div>
+			</div>
+				
+</div>
+			</form>
+		</div>
+	</div>
+	<div class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-wb">
+    <div class="modal-content">
+      <div class="modal-body">
+        <span style="font-size: 18px;">Invalid credentials</span>
+      </div>
+      <div class="modal-footer" style="background:none;border:0;">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</div>
+
+	<!-- <script>
+		angular.module('app', []).controller("MainCtrl",function($scope){
+	$scope.errorusername="";
+	$scope.errorPassword="";
+	$scope.loginValidation=function(data){
+		if(data.target.name==="username")
+		{
+		$scope.isUserName=true;
+		}
+		else
+		{
+		$scope.isUserName=false;
+		}
+		data=data.target.value;
+		if(data!=="")
+		{
+			var regExp=new RegExp("^[a-zA-Z0-9]*$");
+			if(data.length<6 || regExp.test(data)===false)
+			{
+				if($scope.isUserName)
+				{
+				$scope.showUserNameError=true; 
+				$scope.errorusername="error";
+				}
+				else
+				{
+					$scope.showPasswordError=true;
+					$scope.errorPassword="error";
+				}
+			}
+			else
+			{
+				if($scope.isUserName)
+				{
+				$scope.showUserNameError=false;
+				}
+				else
+				{
+					$scope.showPasswordError=false;
+				}
+			}
+		}
+		else
+		{
+			if($scope.isUserName)
+				{
+				$scope.showUserNameError=true;
+				$scope.errorusername="error";
+				}
+				else
+				{
+					$scope.showPasswordError=true;
+					$scope.errorPassword="error";
+				}
+		}
+	}
+	});
+	</script> -->
+
+<!-- <div class="login-body">
+	
+		<div class="container">
+			<header>
+				<div class="card">
+					<img id="profile-img" class="profile-img-card" src="./images/PMA_logo_Color.svg" />
+					<form name='agentLoginForm' role="form" class="form-signin form-inline">
+						<input type="text" name="username" id="userName" ng-model="userName" ng-minlength="5" ng-maxlength="20" class="form-control" placeholder="Username" required autofocus />
+
+						<input type="password" name="password" id="password" ng-model="password" ng-minlength="5" ng-maxlength="20"  class="form-control" placeholder="Password" required />
+						<img class="login-help" src="images/help_grey.svg"/>
+						<button class="btn btn-lg btn-primary btn-signin" ng-click="loginHome()">Login</button>
+					</form>
+{{errMsg}}
+					 <div ng-messages="agentLoginForm.username.$error" style="color:red" role="alert" ng-show='showRequiredErrorMsg'>
+					    <div ng-message="required">You did not enter username</div>
+					    <div ng-message="minlength">Username field is too short</div>
+					    <div ng-message="maxlength">Username field is too long</div>
+					  </div>
+
+					  <div ng-messages="agentLoginForm.password.$error" style="color:red" role="alert" ng-show='showRequiredErrorMsg'>
+					    <div ng-message="required">You did not enter password</div>
+					    <div ng-message="minlength">Password field is too short</div>
+					    <div ng-message="maxlength">Password field is too long</div>
+					  </div>
+				</div>
+			</header>
+			<footer class="footer">
+				<div class="1container">
+					<p class="text-center">v1.0 | Copyright | Legal info or other required information</p>
+				</div>
+			</footer>
+			<div class="text-center forgot-password">
+				<a href="#" class="">Need help logging in?</a>
+			</div>
+		</div>
+		  	
+</div> -->

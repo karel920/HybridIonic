@@ -1,0 +1,135 @@
+.policyView{
+    background:#e5e6e8;
+    width:100%;
+    float:left;
+}
+.policy-address{
+    float:left;
+    width:100%;
+}
+.policy-history{
+    padding-top:50px;
+    float:left;
+    width:100%;
+    height:100%;
+}
+.policy-title{
+    font-size:1.2em;
+    margin-bottom:1px;
+}
+.policy-head
+{
+	display:inline-block;
+	color:#ffffff;
+	font-size:0.6875em;
+}
+.policy-head .policy-name{
+	font-family:WhitneyLight;
+    font-size: 1.1em;
+}
+.policy-close{
+	position:absolute;
+	left:15px;
+	color:#ffffff;
+	font-size:0.6875em;
+	font-family:WhitneyBook;
+}
+
+
+
+.policy-history .panel-policy{
+	margin: 20px 15px 15px 15px;
+    background-color: #fff;
+    border-radius: 5px;
+	padding:10px;
+	font-family:WhitneyBook;
+	font-size: 15px;
+}
+.panel-container .panel-policy p{
+	margin-bottom:0;
+}
+.policy-history .panel-top-left p:nth-child(1){
+	color:#cccdce;
+}
+.policy-history .panel-top-right{
+	color: #808182;
+}
+.policy-history .panel-bottom{
+	color:#000098;
+	padding:0;
+	margin-top:10px;
+}
+.policy-history .panel-bottom span{
+	color:#000;
+}
+.policy-history .panel-group{
+	margin-bottom:0;
+}
+.policy-history .panel-heading{
+	border-left:5px solid #010066;
+	background-color:#fff;
+	font-family:WhitneyMedium;
+	color:#010066;
+	padding: 15px 0 15px 10px;
+}
+.policy-history .panel-heading h4{
+	margin:0;
+	font-family: WhitneyMedium;
+	font-size:16px;
+}
+.panel-container .panel-body{
+	background-color: #fff;
+    border-top: 1px solid #e6e6e8 ;
+    font-size: 14px;
+	border-top:1px solid #010066 !important;
+	margin-top:0;
+	padding:0px 10px 0px 10px;
+}
+.history-details div{
+	display:inline-block;
+	width:66.133333%;
+}
+.history-details{
+	padding: 10px 0px 6px 0;
+	border-bottom:1px solid #ccc;
+	font-size: 15px;
+    font-family: WhitneyMedium;
+}
+.history-details:last-child{
+	border:none;
+}
+.history-details .history-date{
+	margin: 0 50px 0 5px;
+    width: 58px;
+}
+.policy-footer{
+	background-color:#010066;
+	padding:7.5px;
+}
+.pagination-content{
+	text-align:center;
+	color: #fff;
+    font-family: WhitneyLight;
+    padding-top: 3px;
+}
+.pagination-content a,.pagination-content div{
+	display:inline-block;
+}
+.pagination-content a img{
+	width:35px;
+	padding:0;
+}
+.pagination-content div{
+	margin:0 10px;
+	font-size: 16px;
+    padding-top: 3px;
+}
+
+
+
+
+
+
+
+
+

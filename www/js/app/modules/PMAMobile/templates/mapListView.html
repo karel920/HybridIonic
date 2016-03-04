@@ -1,0 +1,198 @@
+<!-- For Desktop/Tablet view Only using media query-->
+<header class="contact-header deskOrTab" ng-model="confirmed" ng-change='searchContactName()'>
+	<div class="inner-content">
+		<div class="header-content clearfix ">
+			<form class="navbar-search  docs-search "  style="">
+				<span><img src="images/search.svg" style="height:20px"></img></span>
+				<input type="text"  class="search-query" placeholder="Search" ng-model="contact_filter">
+				<span class="pull-right"><img src="images/close_black.svg" style="height:20px"></img></span>
+			</form>
+		</div>
+	</div>    
+</header>
+
+<!-- For mobile view Only using media query-->
+<header id='mobileOtherView' class="mobile">
+		<div class="header-content clearfix ">
+			<span class="header-toggle" ng-click='toggleNav($event)'>
+			 <img src="images/menu.svg" /></span>
+			
+			<div class="contact-date" ng-hide="myVar" >
+				<p>{{selectedCampaign.campaignName}}</p>
+			</div>
+			<span class="header-search" ng-click="fnShowSearchView()">
+				<img src="images/search-white.svg"></img>
+			</span>
+		</div>
+	
+</header>
+<div class="tab-section">
+	 		<form action="" class="onlyPhone">
+			<div class="btn-group " role="group">
+						<input id="listtab-1" type="radio" name="radio-set" class="Contacts" checked="checked" />
+		        <label for="listtab-1" class="tab1-label">All Contacts (30)</label>
+		
+	            <input id="listtab-2" type="radio" name="radio-set" class="Hotlist" />
+		        <label for="listtab-2" class="tab2-label">Hotlist (4)</label>
+			</div>
+			</form>
+</div>
+
+<!-- navigation panel start -->
+<div class="wrapper mobileNavPanel" ng-show='mobileNavToggleFlag' ng-click="navAnimate($event,mobileNavToggleFlag)" ng-class="mobileNavToggleFlag ? 'expandnav' : ''">
+	<div class="navigation" ng-controller="campaignCtrl">
+		<div class="nav-header">
+			<div class="nav-logo clearfix">
+				<span class="logoText">Mapping 
+                                        & Contacts</span>
+				<img class="hamburger" src="images/menu.svg"/>
+			</div>
+			<div class="agent-name">
+				<p>Joe Agent</p>
+			</div>
+			
+			<!-- Selected Campaign Block Begins -->
+			<div class="nav-status" ng-click='openCloseSelectCampaign(-1);' ng-show='campaignOpen'>
+				<div class="nav-body" > 
+					<div class="nav-area clearfix">
+						<div class="navv-area-date"  ng-class="{'onHold': '{{selectedCampaignObject.campaignStatus}}' === 'Hold'}">
+							{{selectedCampaignObject.campaignName}}
+						</div>
+                        	                        	
+						<a class="nav-drop" data-toggle="" ng-click=''>
+						
+							<img src="images/downarrow.svg"/>
+						</a>
+					</div>
+					<div class="total-remaining">
+						<div class="total">
+							<div class="total-text"  ng-class="{'onHold': '{{selectedCampaignObject.campaignStatus}}' === 'Hold'}">TOTAL</div>
+				            <div class="total-value" ng-class="{'onHold': '{{selectedCampaignObject.campaignStatus}}' === 'Hold'}">
+                                {{selectedCampaignObject.newContactCount}}
+                            </div>
+						</div>
+						<div class="remaining">
+							<div class="total-text" ng-class="{'onHold': '{{selectedCampaignObject.campaignStatus}}' === 'Hold'}">REMAINING</div>
+							<div class="total-value" ng-class="{'onHold': '{{selectedCampaignObject.campaignStatus}}' === 'Hold'}">                                                {{selectedCampaignObject.remainingContactCount}}
+                            </div>
+						</div>
+						<div class="navv-area-date nav-area-status" ng-if="selectedCampaignObject.campaignStatus == 'Hold'">
+							On Hold
+						</div>
+						
+						<div class="navv-area-date nav-area-status" ng-if="selectedCampaignObject.campaignStatus != 'Hold'">
+							<img class="nav-img-done" src="images/checkboxactive_blue.svg">
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Selected Campaign Block Ends -->
+			
+			<div class="nav-status" ng-show='!campaignOpen'>
+				<div class="nav-body" data-index="$index"
+									ng-repeat="camp in allCampaigns | orderBy: sortByDate:true"
+									ng-click='openCloseSelectCampaign(camp.campaignId);changeCampaign(camp)'>
+									  <!-- | orderBy: sortByDate:true -->
+									<!--
+									not needed for hiding the campaign
+									 ng-init='$index > 0 ? flag[$index]= false : flag[$index]=true'
+									  ng-show='flag[$index]'  -->  
+					<div class="nav-area clearfix">
+						<div class="navv-area-date" ng-class="{'onHold': '{{camp.campaignStatus}}' === 'Hold'}">
+							{{camp.campaignName}}
+						</div>
+                        	                        	
+						<!-- <a class="nav-drop" data-toggle="" ng-click=''>
+						displayCamp(flag[$index],$index)
+							<img src="images/downarrow.svg"/>
+						</a> -->
+					</div>
+					<div class="total-remaining">
+						<div class="total">
+							<div class="total-text"  ng-class="{'onHold': '{{camp.campaignStatus}}' === 'Hold'}">TOTAL</div>
+				            <div class="total-value" ng-class="{'onHold': '{{camp.campaignStatus}}' === 'Hold'}">
+                                {{camp.newContactCount}}
+                            </div>
+						</div>
+						<div class="remaining">
+							<div class="total-text" ng-class="{'onHold': '{{camp.campaignStatus}}' === 'Hold'}">REMAINING</div>
+							<div class="total-value" ng-class="{'onHold': '{{camp.campaignStatus}}' === 'Hold'}"> {{camp.remainingContactCount}}
+                            </div>
+						</div>
+						<div class="navv-area-date nav-area-status" ng-if="camp.campaignStatus == 'Hold'">
+							On Hold
+						</div>
+						
+						<div class="navv-area-date nav-area-status" ng-if="camp.campaignStatus != 'Hold'">
+							<img class="nav-img-done" src="images/checkboxactive_blue.svg" ng-show="camp.checked">
+						</div>
+<!--
+                          <div class="normal checkbox_wrapper" style="float:right;margin-top: 22px;">
+										    <input type="checkbox">
+										    <label></label>
+				        </div>
+-->
+					</div>
+				</div>
+			</div>
+
+			
+
+
+		</div>
+		
+		<div class="nav-content">
+			<div class="nav-list-items">
+				<ul>
+					<li><a ui-sref='home.mapListView' ng-click="wrapperClose()">
+                        <img src="images/contactlist.svg"/>Contacts</a></li>
+					<li><a><img src="images/hotlist_blue.svg"/>Hotlist </a><span class="count count-list">2</span></li>
+					<li><a><img src="images/activities.svg"/>Activities </a><span class="count count-list">4</span></li>
+					<li><a><img src="images/dashboard.svg"/>Dashboard</a></li>
+					<li class="clearfix helpLink">
+						<span class="help">
+                            <img src="images/help.svg"/><a ui-sref='home.help' ng-click="">Help</a></span>
+						<span class="about">
+                            <img src="images/about.svg"/><a ui-sref='home.about' ng-click="">About</a><span>
+					</li>
+                            <li></li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="nav-footer">
+			<p><img src="images/sync.svg"/><span>Last Sync:</span><span> Oct 26 04:03</span></p>
+		</div>
+		
+	
+	</div>
+	
+	
+	<div>
+	</div>
+</div>
+<!-- navigation panel end -->
+
+<div class="contact-list" >
+	<!-- custom directive will come here  -->
+	<map-list-view-directive-new sortingParam='sortingParam'></map-list-view-directive-new>
+</div>
+
+<footer ng-model='sortingParam'>
+		<div class="footer-left">
+			<a href="javascript:void(0);" class="filter" ng-click="" ui-sref='home.filter'>
+			 <img src="images/filter-with-o.svg" fill="red"></img>
+			 <span ng-click="">Filter</span>
+			</a>
+			<a href="javascript:void(0);" class="sorting" ng-click="updateSortingParam()" style="margin-left:20px;">
+                <img id="sortingIcon" src="images/Footer_icon_with_O/sorting-with-o.svg"></img>
+                    <span>Sort</span></a>
+		  </div>
+		<div class="footer-right" ng-click='mobileMapView()'>
+			<a href="javascript:void(0);"><img src="images/Footer_icon_with_O/mapview-with-o.svg"></img>
+			<span>Map</span></a>
+			<!-- <span ui-sref='home.mobileMapView'>Maps</span></a> -->
+			<!-- <span ui-sref='home.mobileMapView'>Maps</span></a> -->
+		</div>
+	
+</footer>

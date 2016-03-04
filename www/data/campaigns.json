@@ -1,0 +1,52 @@
+{
+  "getCampaignsResponse": {
+    "campaigns": [
+      {
+        "campaignId": 1,
+        "campaignName": "ND1 | CASS COUNTY | AUG 15",
+        "remaining": 10,
+        "total": 20,
+        "campaignStatus": "active",
+        "creationDate": "2015-08-03T09:56:56.000Z",
+        "checked":true
+
+      },
+         {
+        "campaignId": 2,
+        "campaignName": "ND2 | CASS COUNTY | SEP 15",
+        "remaining": 3,
+        "total": 12,
+        "campaignStatus": "Hold",
+             "creationDate": "2015-09-03T09:56:56.000Z",
+             "checked":false
+      },
+      {
+        "campaignId": 3,
+        "campaignName": "ND3 | CASS COUNTY | OCT 15",
+        "remaining": 1,
+        "total": 7,
+        "campaignStatus": "",
+          "creationDate": "2015-10-03T09:56:56.000Z",
+          "checked":false
+      },
+      {
+        "campaignId": 4,
+        "campaignName": "ND4 | CASS COUNTY | NOV 15",
+        "remaining": 1,
+        "total": 7,
+        "campaignStatus": "Hold",
+          "creationDate": "2015-10-03T09:56:56.000Z",
+          "checked":false
+      },
+      {
+        "campaignId": 5,
+        "campaignName": "ND5 | CASS COUNTY | NOV 15",
+        "remaining": 1,
+        "total": 7,
+        "campaignStatus": "active",
+        "creationDate": "2015-10-03T09:56:56.000Z",
+        "checked":false
+      }
+    ]
+  }
+}

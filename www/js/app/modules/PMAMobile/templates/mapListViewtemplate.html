@@ -1,0 +1,44 @@
+<ul>
+	<li>
+		<div id="{{'contactLayer'+$index}}" ng-repeat="data in selectedCampaign.contacts "
+					  ng-model='displaySwipPanelFlag[$index]' 
+					  ng-init="displaySwipPanelFlag[$index] = false">
+			<div class="clearfix" ng-hide="displaySwipPanelFlag[$index]" 
+										   ng-click='displaySwipeLayer(displaySwipPanelFlag[$index],$index)'>    
+                  <div class="contacts clearfix" ng-repeat="member in data.members">
+                      <div class="" ui-sref='home.contactDetails({mobileNavToggleFlag : false})'>
+                    <img ng-src="images/disposition_icons/{{data.iconName}}.svg" class="contact-locate">
+					<span class="contact-detail"><p class="contact-name">{{member.firstname}} {{member.lastname}}</p>
+                        <p class="contact-addr">{{data.city}}, {{data.country}}</p></span>
+					<span><img  class="contact-arrow" src="images/rightarrow_grey.svg"></span>
+                     
+                      </div>
+				</div>
+			</div>
+			<!-- Swipe panel -->
+			<div class="contact-status"  ng-show="displaySwipPanelFlag[$index]"  
+                 ng-click='hideSwipePanel(displaySwipPanelFlag[$index],$index)'>
+				<div class="contact-status-arrow" >
+					<img src="images/rightarrow_black.svg">
+				</div>
+				<div class="contact-status-A viewOnMap">
+					<img src="images/mapview_white.svg">
+					<p>View on Map</p>
+				</div>
+				<div class="contact-status-B">
+					<img src="images/disposition.svg">
+					<p>Disposition</p>
+				</div>
+				<div class="contact-status-A">
+					<img src="images/notes.svg">
+					<p>Add Note</p>
+				</div>
+				<div class="contact-status-B">
+					<img src="images/hotlist.svg">
+					<p>Add to Hotlist</p>
+				</div>
+			</div>
+		</div>
+	</li>
+</ul>
+

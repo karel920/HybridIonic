@@ -1,0 +1,233 @@
+@font-face {
+    font-family: 'WhitneyBook';
+    src: url('../fonts/WhitneyFontsWoff/WhitneyBook.WOFF') format("woff"), url('fonts/Whitney-Font-Family/WhitneyBook.eot'), url('fonts/WhitneyFontsTtf/WhitneyBook.ttf') format('truetype'), url('fonts/Whitney-Font-Family/WhitneyBook.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'WhitneyLight';
+    src: url('../fonts/WhitneyFontsWoff/WhitneyLight.WOFF') format("woff"), url('fonts/Whitney-Font-Family/WhitneyLight.eot'), url('fonts/WhitneyFontsTtf/WhitneyLight.ttf') format('truetype'), url('fonts/Whitney-Font-Family/Whitney-Light.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'WhitneyMedium';
+    src: url('../fonts/WhitneyFontsWoff/WhitneyMedium.WOFF') format("woff"), url('fonts/Whitney-Font-Family/WhitneyMedium.eot'), url('fonts/WhitneyFontsTtf/WhitneyMedium.ttf') format('truetype'), url('fonts/Whitney-Font-Family/Whitney-Medium.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ul, li {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+body{
+	font-size:16px;
+}
+
+
+
+.wb-header{
+
+	padding: 15px 13px;
+	color:#fff;
+	position:relative;
+	text-align:center;
+}
+.wb-title{
+	display:inline-block;
+	margin-top: 5px;
+}
+.wb-title p{
+	margin:0;
+}
+.wb-title p:nth-child(2){
+	font-family: WhitneyLight;
+}
+
+.wb-header-toggle img{
+	width:22px;
+}
+.wb-header-search img{
+	width: 30px;
+}
+.wb img.back-arrow {
+    width: 24px;
+    height: 17px;
+    margin-top: -2px;
+    margin-left: -10px;
+}
+
+
+/*
+.common-footer img{
+	width:40px;
+	padding-right: 5px;
+}
+.common-footer{
+	padding: 7.5px 15px;
+	position:fixed;
+	bottom:0;
+	width:100%;
+	color:#fff;
+	font-size: 18px;
+	font-family: WhitneyLight;
+}
+*/
+body{
+	background-color: #010066;
+    height: inherit;
+}
+
+.pma-login{
+    padding: 15% 0;
+    height: 100%;
+    background: url("../images/bg_workbench_iPhone.png") rgb(1,0,94);
+    background-size: cover;
+}
+
+.login-form{
+	background-color:#dedede;
+	width: 320px;
+	        border: 3px solid #9a9a9a;
+    border-radius: 6px;
+        margin: 0 auto;
+        box-shadow: 0px 0px 25px #000;
+}
+.login_logo{
+    width: 250px;
+    height:auto;
+}
+.login-form h1{
+	color:#01025f;
+	text-align:center;
+	margin:0;
+	font-size: 36px;
+	padding-top: 5px;
+}
+.heading .login_logo{
+    display: block;
+    margin: 0 auto;
+}
+
+.input-field input {
+    
+    height: 43px;
+    border-radius: 22px;
+    border: 1px solid #787878;
+    margin-top: 13px;
+}
+form .input-field:nth-child(1){
+    border-top: 3px dotted #7f7f80;
+    padding-top:18px;
+}
+.heading{
+	padding:26px 0 25px 0;
+}
+
+
+.formcontainer{
+	    padding: 10px 0 17px 0;
+	        width: 237px;
+    margin: 0 auto;
+}
+.formcontainer .error
+	{
+	  border: 1px solid #f00 !important;
+	}
+.formcontainer .error-message{
+	color:#f00;
+	font-size: 14px;
+   	line-height: normal;
+}
+
+.nav-buttons{
+    padding: 24px 0 17px 0;
+    margin: 0 auto;
+}
+.nav-buttons img{
+	width:12px;
+    height:12px;
+}
+.nav-buttons button{
+	width: 116px;
+    font-size: 14px;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#060563), to(#010157), color-stop(.6,#211989));
+    border: none;
+    padding: 8px 27px;
+    border-radius: 7px;
+    box-shadow: 3px 3px 0px #9b9b9c;
+    color: #fff;
+}
+
+.nav-buttons button:disabled{
+	width: 116px;
+    font-size: 14px;
+    background: rgb(155, 155, 156);
+    border: none;
+    padding: 8px 27px;
+    border-radius: 7px;
+    box-shadow: 3px 3px 0px #9b9b9c;
+    color: #fff;
+}
+.nav-buttons a{
+	    font-size: 12px;
+    padding-left: 16px;
+    color: #303279;
+    text-decoration: underline;
+    padding-top: 8px;
+    padding-right: 10px;
+}
+
+.input-field input[type='text'],input[type='password'] {
+    background-image: url(../images/username.svg);
+    background-position: 0 10px;
+    background-repeat: no-repeat;
+    background-size: 50px 20px;
+    color:#000;
+    width: 100%;
+    text-indent:45px;
+}
+
+.input-field input[type='text'].ng-invalid-minlength{
+    border:1px solid red!important;
+}
+
+.input-field input[type='password'] {
+    background-image: url(../images/password.svg);
+    
+}
+
+::-webkit-input-placeholder {
+   padding:0;
+   color: red;
+   color:#010166;
+   font-size:15px;
+   
+}
+.input-field input:focus {
+     outline: 0;
+ }
+
+/*
+:-moz-placeholder { /* Firefox 18- *//*
+   color: red;
+    
+}
+
+::-moz-placeholder {  /* Firefox 19+ *//*
+   color: red;
+     
+}
+
+:-ms-input-placeholder {  
+   color: red;
+   text-indent:10px!important;  
+}

@@ -1,0 +1,82 @@
+<div class="pma-landing">
+<div ng-show="isWbLanding">
+		<header class="wb_header gradient_bgcolor clearfix">
+			<div class="wb-headers"><p>PMA Workbench</p></div>
+			<span class="wb_sync"><img class="pull-right" src="images/Workbench_icons/SVGs/sync.svg"></span>
+		</header>
+		
+		
+		<div class="pma-content">
+			<div class="land-favour">
+				<div class="wb-titles wb-titles_fav clearfix">
+					<p class="pull-left">My Favorites</p>
+					<span class="wb_edit" ng-click="editFavorities()">
+					<img class="pull-right" src="images/Workbench_icons/SVGs/edit_white.svg">
+					</span>
+				</div>
+
+				<div class="tiles clearfix" style="padding-bottom: 10px;">
+					<div class="row tile-content">
+						<div class="tile pull-left col-xs-4" ng-repeat="tiledata in agentTileData" ng-if="tiledata.favorite">
+							<a ui-sref="{{tiledata.url}}">
+								<img src="{{tiledata.tileImageSrc}}">
+								
+								<p>{{tiledata.tileName}}</p>
+							</a>
+						</div>	
+						<div class="tile pull-left col-xs-4" ng-repeat="tiledata in managerTileData" ng-if="tiledata.favorite">
+							<a ui-sref="{{tiledata.url}}">
+								<img src="{{tiledata.tileImageSrc}}">
+								
+								<p>{{tiledata.tileName}}</p>
+							</a>
+						</div>							
+						
+					</div>
+				</div>
+			</div>
+
+			<div  class="land-agent">
+				<div class="wb-titles">
+					<p>Agent Toolbox</p>
+				</div>
+
+				<div class="tiles clearfix">
+					<div class="row tile-content" >
+						<div class="tile pull-left col-xs-4" ng-repeat="tiledata in agentAllTileList">
+							<a ui-sref="{{tiledata.url}}" ng-if="tiledata.tileImageSrc != ''">
+								<img src="{{tiledata.tileImageSrc}}" >
+								<p>{{tiledata.tileName}}</p>
+							</a>
+						</div>
+						
+												
+					</div>
+				</div>
+			</div>
+			</div>
+			</div>
+				<div ng-hide="isWbLanding">
+					<header class="wb_header gradient_bgcolor clearfix">
+						<span class="wb-header-toggle pull-left " ng-click="redirectToLandingPage()" >
+				<img class="wb-back"src="images/Workbench_icons/SVGs/leftarrrow.svg">BACK</span>
+				<span class="wb-save" ng-click="saveFavoritiesData()"><p>SAVE</p></span>
+					<div class=" wb-headers_fav"><p>Manage Favorites</p></div>
+					
+				</header>
+				<div class="fav-content">
+					<div class="favourities-check clearfix agentClass" ng-repeat="tiledata in agentFavoritesTileList"
+					ng-class="{'selectedFav': tiledata.favorite == true}">
+						<div><img class="pull-left" src="{{tiledata.tileImageSrc}}">
+						<p class="pull-left">{{tiledata.tileName}}</p>
+						<div class="pull-right normal unchecked checkbox_wrapper">
+							<input type="checkbox" ng-model="tiledata.favorite" ng-change="checkChanged(tiledata)" 
+                                    ng-disabled="checked==selectionLimit && !tiledata.favorite">
+							<label></label>
+						</div>
+						</div>
+					</div>
+				</div>
+				</div>
+
+	</div>

@@ -1,0 +1,30 @@
+		<div class="pma-landing" ng-app="PMAApp">
+					<header class="wb_header gradient_bgcolor clearfix">
+						<span class="wb-header-toggle pull-left " ng-click="back()" >
+				<img class="wb-back"src="images/Workbench_icons/SVGs/leftarrrow.svg">BACK</span>
+					<span class="wb-save" ng-click="save()"><p>SAVE</p></span>
+					<div class=" wb-headers_fav"><p>Manage Favorites</p></div>
+					
+				</header>		
+				<div class="fav-content">
+					<div class="favourities-check clearfix agentClass" ng-repeat="tiledata in agentFavoritesTileList">
+						<div><img class="pull-left" src="{{tiledata.tileImageSrc}}">
+						<p class="pull-left">{{tiledata.tileName}}</p>
+						<div class="pull-right normal unchecked checkbox_wrapper">
+							<input  type="checkbox" ng-model="tiledata.favorite">
+							<label></label>
+							
+						</div>
+						</div>
+					</div>
+					<div class="favourities-check clearfix managerClass" 
+                         ng-repeat="tiledata in managerFavoritesTileList">
+						<img class="pull-left" src="{{tiledata.tileImageSrc}}">
+						<p class="pull-left">{{tiledata.tileName}}</p>
+						<div class="pull-right normal unchecked checkbox_wrapper">
+							<input  type="checkbox" ng-model="tiledata.favorite">
+							<label></label>
+						</div>
+					</div>
+				</div>
+		</div>

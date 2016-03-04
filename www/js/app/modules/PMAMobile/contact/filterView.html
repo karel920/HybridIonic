@@ -1,0 +1,612 @@
+<div>
+			<div class="contact-container filter-wrapper">
+
+				<header>
+                   
+					<span class="back" ng-click='filterToMapView()'>
+                        <img class="leftarrow" src="images/leftarrrow.svg"/>BACK</span>
+					<div class="headerTitle"><p>Filter Contacts</p></div>
+             
+				</header>
+
+				<div class="filter-bar">
+					<span>Show all</span> 
+						<div class="normal unchecked1 checkbox_wrapper1">
+							<input  type="checkbox" ng-change="filterShow()" ng-model="showFilter">
+							<label></label>
+						</div>
+					<span>Show Remaining</span>
+				</div>
+
+				<div class="filter-content">
+					<div class="filter-section">
+						<h2>HOUSEHOLD TYPE</h2>
+						<div class="filter-sublist">
+							<ul>
+								<li class="clearfix">
+									<div class="contact-line" >
+										<p>New</p>
+										<div class="normal unchecked checkbox_wrapper">
+										    <input  type="checkbox" ng-model="newHHold" ng-change="filterData()"> 
+										    <label></label>
+										</div>
+									</div>
+								</li>
+								<li class="clearfix" >
+									<div class="contact-line" >
+										<p>Active</p>
+										<div class="normal unchecked checkbox_wrapper">
+										    <input type="checkbox" ng-model="activeHHold" ng-change="filterData()">
+										    <label></label>
+										</div>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="contact-line" >
+										<p>Termed</p>
+										<div class="normal unchecked checkbox_wrapper">
+										    <input  type="checkbox" ng-model="termedHHold" ng-change="filterData()">
+										    <label></label>
+										</div>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="contact-line" >
+										<p>Refferals</p>
+										<div class="normal unchecked checkbox_wrapper">
+										    <input  type="checkbox" ng-model="referralsHHold" ng-change="filterData()">
+										    <label></label>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="filter-section">
+						<h2>DISPOSITION STATUS</h2>
+						<div class="filter-sublist">
+							<ul>
+								<li class="clearfix">
+									<div class="contact-line" >
+										<p>Not Home - Follow up</p>
+										<div class="normal unchecked checkbox_wrapper">
+										    <input  type="checkbox" ng-model="notHomeDS" ng-change="filterData()">
+										    <label></label>
+										</div>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="contact-line" >
+										<p>Not Interested</p>
+										<div class="normal unchecked checkbox_wrapper">
+										    <input  type="checkbox" ng-model="notIntDS" ng-change="filterData()">
+										    <label></label>
+										</div>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="contact-line">
+										<p>Appointment</p>
+										<div class="normal unchecked checkbox_wrapper">
+										    <input  type="checkbox" ng-model="appDS" ng-change="filterData()">
+										    <label></label>
+										</div>
+									</div>
+								</li>
+								<li class="" >
+									<div class="threeradio" >
+										<div class="appointment-check">
+											<div class="normal unchecked checkbox_wrapper">
+											    <input  type="checkbox" ng-model="hohappDS" ng-change="filterData()">
+											    <label></label>
+											</div>
+											<p class="sub"><span>A</span> Head of house</p>
+										</div>
+										<div class="appointment-check">
+											<div class="normal unchecked checkbox_wrapper">
+											    <input  type="checkbox" ng-model="sappDS" ng-change="filterData()">
+											    <label></label>
+											</div>
+											<p class="sub"><span>B</span> Spouse</p>
+										</div>
+										<div class="appointment-check">
+											<div class="normal unchecked checkbox_wrapper">
+											    <input  type="checkbox" ng-model="oappDS" ng-change="filterData()">
+											    <label></label>
+											</div>
+											<p class="sub"><span>C</span> Other</p>
+										</div>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="contact-line" >
+										<p>Appointment No-show</p>
+										<div class="normal unchecked checkbox_wrapper">
+										    <input  type="checkbox" ng-model="aNoSDS" ng-change="filterData()">
+										    <label></label>
+										</div>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="contact-line" >
+										<p>Presentation and No Sale</p>
+										<div class="normal unchecked checkbox_wrapper">
+										    <input  type="checkbox" ng-model="pNsDS" ng-change="filterData()">
+										    <label></label>
+										</div>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="contact-line" >
+										<p>Presentation and Sale</p>
+										<div class="normal unchecked checkbox_wrapper">
+										    <input  type="checkbox" ng-model="pSDS" ng-change="filterData()">
+										    <label></label>
+										</div>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="contact-line" > 
+										<p>Contacts Without Dispositions</p>
+										<div class="normal unchecked checkbox_wrapper">
+										    <input  type="checkbox" ng-model="cWDS" ng-change="filterData()">
+										    <label></label>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="filter-section">
+						<h2>CONTACT DETAILS</h2>
+						<div class="filter-sublist">
+							<ul>
+								<li class="clearfix">
+									<div class="contact-line" >
+										<p>Power Names</p>
+										<div class="normal unchecked checkbox_wrapper">
+										    <input  type="checkbox" ng-model="pNCD" ng-change="filterData()">
+										    <label></label>
+										</div>
+									</div>
+								</li>
+								<li class="clearfix" data-toggle="modal" data-target="#ageModal">
+									<div class="contact-line">
+										<p>Age Range</p>
+										<div class="normal">
+											<span>All</span><img class="normal" src="images/rightarrow_grey.svg">
+										</div>
+									</div>
+								</li>
+								<li class="clearfix" data-toggle="modal" data-target="#occupationModal">
+									<div class="contact-line" ng-click="powerNames($event)">
+										<p>Occupation</p>
+										<div class="normal">
+											<span>All</span><img src="images/rightarrow_grey.svg">
+										</div>
+									</div>
+								</li>
+								<!-- 	<li class="powerNames" ng-show="powerNamesShow">
+									<div class="threeradio" >
+										<div class="appointment-check">
+											<div class="normal unchecked checkbox_wrapper">
+											    <input  type="checkbox" ng-model="agPN">
+											    <label></label>
+											</div>
+											<p class="sub"> A-G</p>
+										</div>
+										<div class="appointment-check">
+											<div class="normal unchecked checkbox_wrapper">
+											    <input  type="checkbox" ng-model="hpPN">
+											    <label></label>
+											</div>
+											<p class="sub">H-P</p>
+										</div>
+										<div class="appointment-check">
+											<div class="normal unchecked checkbox_wrapper">
+											    <input  type="checkbox" ng-model="qzPN">
+											    <label></label>
+											</div>
+											<p class="sub"> Q-Z</p>
+										</div>
+									</div>
+								</li> -->
+							</ul>
+						</div>
+					</div>
+					<div class="filter-section">
+						<h2>POLICY STATUS <span id="policy-date">(as of 07/21/15)</span></h2>
+						<div class="filter-sublist">
+							<ul>
+								<li class="clearfix">
+									<div class="contact-line" >
+										<p>Payment Past Due</p>
+										<div class="normal unchecked checkbox_wrapper">
+										    <input  type="checkbox" ng-model="ppdPS" ng-change="filterData()">
+										    <label></label>
+										</div>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="contact-line">
+										<p>Has Claims</p>
+										<div class="normal unchecked checkbox_wrapper">
+										    <input  type="checkbox" ng-model="hcPS" ng-change="filterData()">
+										    <label></label>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<footer>
+					<div class="pull-left" style="padding:5px;" ng-click="resetFilters()">
+						<img src="images/Footer_icon_with_O/reset-with-o.svg"><span>Reset</span>
+					</div>
+					<div class="pull-right" style="padding:5px;" ng-click="showResults()">
+						<img src="images/Footer_icon_with_O/searchresult-with-o.svg"><span>See {{filteredData.length}} Results</span>
+					</div>
+				</footer>
+
+			</div>
+		</div>
+		
+		<div class="modal fade" id="occupationModal">
+			   	<div class="modal-dialog occupation-dialog">
+			 
+			    <!-- Modal content-->
+				   	<div class="modal-content">
+			    	   	<div class="modal-body leftText">
+					   		<div class="filter-choice">
+							<ul>	
+								<li><p class="addcontact-removeMargin"><label for="carpOccu">Carpenter</label>
+									<span class="normal unchecked checkbox_wrapper">
+									<input id="carpOccu" type="checkbox" ng-model="carpOccu">
+									<label></label>
+								</span></p>
+								</li>
+								<li><p class="addcontact-removeMargin"><label for="roofOccu">Roofer</label>
+									<span class="normal unchecked checkbox_wrapper">
+									<input id="roofOccu" type="checkbox" ng-model="roofOccu">
+									<label></label>
+								</span></p>
+								</li>
+								<li><p class="addcontact-removeMargin"><label for="beauOccu">Beauticians</label>
+									<span class="normal unchecked checkbox_wrapper">
+									<input  id="beauOccu" type="checkbox" ng-model="beauOccu">
+									<label></label>
+								</span></p>
+								</li>
+								<li><p class="addcontact-removeMargin"><label for="mechOccu">Mechanic</label>
+									<span class="normal unchecked checkbox_wrapper">
+									<input id="mechOccu" type="checkbox" ng-model="mechOccu">
+									<label></label>
+								</span></p>
+								</li>
+								<li><p class="addcontact-removeMargin"><label for="trucOccu">Trucker</label>
+									<span class="normal unchecked checkbox_wrapper">
+									<input id="trucOccu" type="checkbox" ng-model="trucOccu">
+									<label></label>
+								</span></p>
+								</li>
+								<li><p class="addcontact-removeMargin"><label for="NurseOccu">Nurse</label>
+									<span class="normal unchecked checkbox_wrapper">
+									<input id="NurseOccu" type="checkbox" ng-model="nurseOccu" >
+									<label></label>
+								</span></p>
+								</li>
+								<li><p class="addcontact-removeMargin"><label for="schteachOccu">School Teacher</label>
+									<span class="normal unchecked checkbox_wrapper">
+									<input id="schteachOccu" type="checkbox" ng-model="schteachOccu" >
+									<label></label>
+								</span></p>
+								</li>
+								<li><p class="addcontact-removeMargin"><label for="docOccu">Doctor</label>
+									<span class="normal unchecked checkbox_wrapper">
+									 <input id="docOccu" type="checkbox" ng-model="docOccu" >
+									<label></label>
+								</span></p>
+								</li>
+								<li><p class="addcontact-removeMargin"><label for="lawOccu">Lawyer</label>
+									<span class="normal unchecked checkbox_wrapper">
+									<input id="lawOccu" type="checkbox" ng-model="lawOccu">
+									<label></label>
+								</span></p>
+								</li>
+								<li><p class="addcontact-removeMargin"><label for="govtPoliOccu">Government/ Politician</label>
+									<span class="normal unchecked checkbox_wrapper">
+									<input id="govtPoliOccu" type="checkbox" ng-model="govtPoliOccu" >
+									<label></label>
+								</span></p>
+								</li>
+								<li><p class="addcontact-removeMargin"><label for="farRanOccu">Farmer/ Rancher</label>
+									<span class="normal unchecked checkbox_wrapper">
+									<input id="farRanOccu" type="checkbox" ng-model="farRanOccu">
+									<label></label>
+								</span></p>
+								</li>
+								</ul>
+					   		</div>
+					   	</div>
+					  <button class="modal-button doneFilter" ng-click="filterData()" data-dismiss="modal">Done</button>
+					</div>
+					</div>
+			</div>
+			
+			
+			<div class="modal fade" id="ageModal" role="dialog">
+			   	<div class="modal-dialog age-dialog">
+			 
+			    <!-- Modal content-->
+				   	<div class="modal-content">
+			    	   	<div class="modal-body leftText">
+					   		<div class="filter-choice">
+							<ul>	<li><p class="addcontact-removeMargin"><label for="zero_seventeenAR">0-17</label>
+									<span class="normal unchecked checkbox_wrapper">
+									<input id="zero_seventeenAR" type="checkbox" ng-model="zero_seventeenAR" >
+									<label></label>
+								</span></p>
+								</li>
+								<li><p class="addcontact-removeMargin"><label for="eighteen_twentyFourAR">18-24</label>
+									<span class="normal unchecked checkbox_wrapper">
+									<input id="eighteen_twentyFourAR" type="checkbox" ng-model="eighteen_twentyFourAR">
+									<label></label>
+								</span></p>
+								</li>
+								<li><p class="addcontact-removeMargin"><label for="twentyFive_thirtyFourAR">25-34</label>
+									<span class="normal unchecked checkbox_wrapper">
+									 <input  id="twentyFive_thirtyFourAR" type="checkbox" ng-model="twentyFive_thirtyFourAR">
+									<label></label>
+								</span></p>
+								</li>
+								<li><p class="addcontact-removeMargin"><label for="thirtyFive_fourtyFourAR">35-44</label>
+									<span class="normal unchecked checkbox_wrapper">
+									<input id="thirtyFive_fourtyFourAR" type="checkbox" ng-model="thirtyFive_fourtyFourAR">
+									<label></label>
+								</span></p>
+								</li>
+								<li><p class="addcontact-removeMargin"><label for="fourtyFive_fiftyFourAR">45-54</label>
+									<span class="normal unchecked checkbox_wrapper">
+									<input id="fourtyFive_fiftyFourAR" type="checkbox" ng-model="fourtyFive_fiftyFourAR">
+									<label></label>
+								</span></p>
+								</li>
+								<li><p class="addcontact-removeMargin"><label for="fiftyFive_sixtyFourAR">55-64</label>
+									<span class="normal unchecked checkbox_wrapper">
+									<input id="fiftyFive_sixtyFourAR" type="checkbox" ng-model="fiftyFive_sixtyFourAR" >
+									<label></label>
+								</span></p>
+								</li>
+								<li><p class="addcontact-removeMargin"><label for="sixtyFive_seventyFourAR">65-74</label>
+									<span class="normal unchecked checkbox_wrapper">
+									<input id="sixtyFive_seventyFourAR" type="checkbox" ng-model="sixtyFive_seventyFourAR" >
+									<label></label>
+								</span></p>
+								</li>
+								<li><p class="addcontact-removeMargin"><label for="greaterThanSeventyFiveAR">>75</label>
+									<span class="normal unchecked checkbox_wrapper">
+									<input id="greaterThanSeventyFiveAR" type="checkbox" ng-model="greaterThanSeventyFiveAR" >
+									<label></label>
+								</span></p>
+								</li>
+								</ul>
+										
+									
+					   		</div>
+					   	</div>
+					  <button class="modal-button doneFilter"  ng-click="filterData()" data-dismiss="modal">Done</button>
+					</div>
+					</div>
+			</div>
+
+
+<!-- <div>
+			<div class="filter-wrapper">
+
+				<div class="filter-header clearfix" ng-click='filterToMapView()'>
+					<div class="filter-back"><img class="normal "src="images/leftarrrow.svg">BACK</div>
+					<h1>Filter Contacts</h1>
+				</div>
+
+				<div class="filter-bar">
+					<span>Show all</span> 
+						<div class="normal unchecked1 checkbox_wrapper1">
+							<input  type="checkbox">
+							<label></label>
+						</div>
+					<span>Show Remaining</span>
+				</div>
+
+				<div class="filter-content">
+					<div class="filter-section">
+						<h2>HOUSEHOLD TYPE</h2>
+						<div class="filter-sublist">
+							<ul>
+								<li class="clearfix">
+									<div class="contact-line">
+										<p>New</p>
+										<div class="normal unchecked checkbox_wrapper">
+										    <input  type="checkbox">
+										    <label></label>
+										</div>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="contact-line">
+										<p>Active</p>
+										<div class="normal unchecked checkbox_wrapper">
+										    <input  type="checkbox">
+										    <label></label>
+										</div>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="contact-line">
+										<p>Termed</p>
+										<div class="normal unchecked checkbox_wrapper">
+										    <input  type="checkbox">
+										    <label></label>
+										</div>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="contact-line">
+										<p>Refferals</p>
+										<div class="normal unchecked checkbox_wrapper">
+										    <input  type="checkbox">
+										    <label></label>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="filter-section">
+						<h2>DISPOSITION STATUS</h2>
+						<div class="filter-sublist">
+							<ul>
+								<li class="clearfix">
+									<div class="contact-line">
+										<p>Not Home - Follow up</p>
+										<div class="normal unchecked checkbox_wrapper">
+										    <input  type="checkbox">
+										    <label></label>
+										</div>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="contact-line">
+										<p>Not Interested</p>
+										<div class="normal unchecked checkbox_wrapper">
+										    <input  type="checkbox">
+										    <label></label>
+										</div>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="contact-line">
+										<p>Appointment</p>
+										<div class="normal unchecked checkbox_wrapper">
+										    <input  type="checkbox">
+										    <label></label>
+										</div>
+									</div>
+								</li>
+								<li class="">
+									<div class="threeradio" >
+										<div class="appointment-check">
+											<div class="normal unchecked checkbox_wrapper">
+											    <input  type="checkbox">
+											    <label></label>
+											</div>
+											<p class="sub"><span>A</span> Head of house</p>
+										</div>
+										<div class="appointment-check">
+											<div class="normal unchecked checkbox_wrapper">
+											    <input  type="checkbox">
+											    <label></label>
+											</div>
+											<p class="sub"><span>B</span> Spouse</p>
+										</div>
+										<div class="appointment-check">
+											<div class="normal unchecked checkbox_wrapper">
+											    <input  type="checkbox">
+											    <label></label>
+											</div>
+											<p class="sub"><span>C</span> Other</p>
+										</div>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="contact-line">
+										<p>Termed</p>
+										<div class="normal unchecked checkbox_wrapper">
+										    <input  type="checkbox">
+										    <label></label>
+										</div>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="contact-line">
+										<p>Refferals</p>
+										<div class="normal unchecked checkbox_wrapper">
+										    <input  type="checkbox">
+										    <label></label>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="filter-section">
+						<h2>Contact Details</h2>
+						<div class="filter-sublist">
+							<ul>
+								<li class="clearfix">
+									<div class="contact-line">
+										<p>Power Names</p>
+										<div class="normal">
+											<span>All</span><img src="images/rightarrow.svg">
+										</div>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="contact-line">
+										<p>Age Range</p>
+										<div class="normal">
+											<span>All</span><img class="normal" src="images/rightarrow.svg">
+										</div>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="contact-line">
+										<p>Occupation</p>
+										<div class="normal unchecked checkbox_wrapper">
+										    <input  type="checkbox">
+										    <label></label>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="filter-section">
+						<h2>POLICY STATUS <span id="policy-date">(as of 07/21/15)</span></h2>
+						<div class="filter-sublist">
+							<ul>
+								<li class="clearfix">
+									<div class="contact-line">
+										<p>Payment Past Due</p>
+										<div class="normal unchecked checkbox_wrapper">
+										    <input  type="checkbox">
+										    <label></label>
+										</div>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="contact-line">
+										<p>Has Claims</p>
+										<div class="normal unchecked checkbox_wrapper">
+										    <input  type="checkbox">
+										    <label></label>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<footer class="common-footer clearfix">
+					<div class="footer-left" ng-click="">
+						<img src="images/Footer_icon_with_O/sorting-with-o.svg"><span>Reset</span>
+					</div>
+					<div class="footer-right">
+						<img id="sortingIcon" src="images/Footer_icon_with_O/sorting-with-o.svg"><span>See 20 Results</span>
+					</div>
+				</footer>
+
+			</div>
+		</div> -->

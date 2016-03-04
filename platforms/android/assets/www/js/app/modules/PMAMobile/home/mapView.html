@@ -1,0 +1,43 @@
+<!-- map view will come here -->
+<div id='mapViewContainer'>
+ <leaflet center="center"  markers="contacts"  event-broadcast="events" layers="layers"></leaflet>
+</div>
+
+<!-- other view will come here -->
+<div class="headerViewContainer" ui-view='headerView'></div>
+<div id='name_details' ng-show="previewCard">
+
+<div class = 'trigger'>
+    <p class='startAlign'>(A) <span class='contactAppointment'>Appointment: Thursday 9PM - 10 PM</span></p>
+    <img class= 'imgLeft' src='images/hotlist_grey.svg'>
+    <img class='imgSelected' ng-src='images/disposition_icons/{{PreviewData.model.iconName}}.svg'>
+    <img class='imgRight' src='images/likesname_grey.svg' ng-click='quickFilter()'>
+    <div class='panel-addr'>
+        <p>{{PreviewData.model.street}}</b>
+                {{PreviewData.model.city}}
+						</p>
+    <p>{{PreviewData.model.members[0].firstname}} {{PreviewData.model.members[0].lastname}}</p>
+    <p>John Snow</p><p>{{PreviewData.model.phoneNumber}}</p></div></div>
+
+</div>
+<!-- other view will come here -->
+<div id='mobileOtherViewContainer' class="otherViewContainer mobile" ui-view='otherView' ng-show='showMobileOtherView'></div>
+
+<!-- For mobile footer only -->	
+<footer class="mobile">
+		<div class="footer-left" ng-if="!quickFilterSearch">
+			<a ui-sref='home.filter' class="filter" ng-click="">
+                <img src="images/filter-with-o.svg" fill="red"></img><span>Filter</span></a>
+		</div>
+
+        <div class="footer-left" ng-if="quickFilterSearch" ng-click="clearFilterResults()">
+			<span class="filter">
+                <img src="images/filter-with-o.svg" fill="red"></img><span>ClearFilter</span></span>
+		</div>
+
+		<div class="footer-right" ng-click='mobileShowOtherView()'>
+			<a href="javascript:void(0);"><img src="images/Footer_icon_with_O/list-with-o.svg"></img>
+			<span>List</span></a>
+		</div>
+	
+</footer>

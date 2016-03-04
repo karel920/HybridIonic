@@ -1,0 +1,318 @@
+@font-face {
+    font-family: 'WhitneyBook';
+    src: url('../fonts/WhitneyFontsWoff/WhitneyBook.WOFF') format("woff"), url('fonts/Whitney-Font-Family/WhitneyBook.eot'), url('fonts/WhitneyFontsTtf/WhitneyBook.ttf') format('truetype'), url('fonts/Whitney-Font-Family/WhitneyBook.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'WhitneyLight';
+    src: url('../fonts/WhitneyFontsWoff/WhitneyLight.WOFF') format("woff"), url('fonts/Whitney-Font-Family/WhitneyLight.eot'), url('fonts/WhitneyFontsTtf/WhitneyLight.ttf') format('truetype'), url('fonts/Whitney-Font-Family/Whitney-Light.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'WhitneyMedium';
+    src: url('../fonts/WhitneyFontsWoff/WhitneyMedium.WOFF') format("woff"), url('fonts/Whitney-Font-Family/WhitneyMedium.eot'), url('fonts/WhitneyFontsTtf/WhitneyMedium.ttf') format('truetype'), url('fonts/Whitney-Font-Family/Whitney-Medium.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.back
+{	   
+	position: absolute;
+    top: 12px;
+    left: 20px;
+    float: left;
+    color: #fff;
+    font-size: 16px;
+}
+#edit
+{
+	font-size: 16px;
+	color:#fff;
+	margin-right: 10px;
+	float:right;
+	margin-top: 5px;
+}
+/* sub buttons */
+.contact-sub-buttons #active
+{
+	/* IE10+ */ 
+background-image: -ms-linear-gradient(top, #0745AA 0%, #000166 100%);
+
+/* Mozilla Firefox */ 
+background-image: -moz-linear-gradient(top, #0745AA 0%, #000166 100%);
+
+/* Opera */ 
+background-image: -o-linear-gradient(top, #0745AA 0%, #000166 100%);
+
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0745AA), color-stop(100, #000166));
+
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-linear-gradient(top, #0745AA 0%, #000166 100%);
+
+/* W3C Markup */ 
+background-image: linear-gradient(to bottom, #0745AA 0%, #000166 100%);
+	color:#ffffff;
+}
+.contact-sub-buttons{
+	background-color:#F2F2F2;
+	padding: 0px 0 22px 0;
+    text-align: center;
+}
+.contact-sub-buttons .btn-group{
+	width:63%;
+	margin:0 auto;
+}
+.contact-sub-buttons button{
+	border:1px solid #000066;
+	font-family:WhitneyBook;
+	width:50%;
+}
+
+.contact-sub-buttons .btn-group .btn
+{
+	width:33%;
+	padding: 0px 0 2px 0;
+}
+.contact-sub-buttons .btn-group .btn img
+{
+	height:20px;
+}
+
+#contact-container .panel-group
+{
+padding-bottom: 12px;
+margin-bottom: 0;
+}
+#contact-container #contact-address{
+	text-align:center;
+	padding:15px;
+	margin-bottom: 0px;
+}
+#contact-address .panel{
+	padding: 10px 0 15px 0;
+    margin-top: 25px;
+}
+#contact-address img{
+	height:35px;
+	width:35px;
+}
+#contact-address div p{
+	    margin-bottom: 0;
+    color: #666;
+    font-weight: 700;
+}
+#contact-address .panel p:nth-child(1){
+	font-family:WhitneyLight;
+	padding: 5px 0 10px 0;
+	font-size: 14px;
+}
+#contact-address .panel p:nth-child(2){
+	font-family:WhitneyMedium;
+    padding-top: 5px;
+    font-size:16px;
+}
+#contact-address .panel p:nth-child(3){
+	font-family:WhitneyBook;
+	color:#b3b4b5;
+    padding: 0 0 5px 0;
+}
+#contact-address .panel p:nth-child(4){
+	font-family:WhitneyMedium;
+	color:#000066;
+	padding-top: 5px;
+}
+#contact-address .panel-addr{
+	padding:0 50px;
+}
+
+#contact-container
+{
+	background-color:#E5E6E8;
+	margin-bottom:50px;
+	
+}
+#contact-container .panel-heading
+{
+	background-color:#fff;
+	    padding: 7px 15px;
+
+}
+#contact-container h4{
+	font-family:WhitneyMedium;
+	color:#010066;
+	font-size:14px;
+}
+#contact-container .panel-group{
+	    1margin-bottom: 15px;
+}
+#contact-container .panel-group a{
+	text-decoration:none;
+}
+#contact-container .panel-body{
+	margin-top:-3px;
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: #fff;
+    border-top: 1px solid #e6e6e8 ;
+    border-radius: 0 0 5px 5px;
+    padding:0;
+    font-size: 14px;
+}
+#contact-container .panel-body{
+	border-bottom:1px solid #e6e6e8;
+	    padding-top: 10px;
+}
+#collapse1 .panel-body:nth-child(1),#collapse2 .panel-body:nth-child(1),
+#collapse3 .panel-body:nth-child(1),#collapse4 .panel-body:nth-child(1),
+#collapse5 .panel-body:nth-child(1){
+	border-top:1px solid #000166;
+}
+
+
+#contact-container .panel-notes {
+	padding:0px 15px;
+    font-family:WhitneyBook;
+}
+#contact-container .panel-notes  p:nth-child(2){
+	color:#000;
+}
+#contact-container .panel-dispositions{
+	padding:0px 15px;
+    font-family: WhitneyBook;
+}
+#contact-container .panel-dispositions p:nth-child(2){
+	color:#000;
+}
+#contact-container .contact-accodians
+{
+	
+	border-bottom: 1px solid #b8b8ba;
+	margin-right:15px;
+	margin-left:15px;
+	cursor:pointer;
+	border-left:5px solid #000066;
+	border-radius:5px;
+}
+#contact-container .contact-like-locate{
+	height:45px;
+	margin-left: -5px;
+    margin-right: 5px;
+}
+#contact-container .contact-like-locate,#contact-container .contact-like-detail{
+	float:left;
+}
+#contact-container .contact-like-arrow{
+	margin-top: 12px;
+    margin-right: 5px;
+    float: right;
+    height:16px;
+}
+
+
+#contact-container .contact-addr{
+	float:left;
+	padding-left:15px;
+	padding-bottom: 10px;
+    font-family: Whitneybook;	
+}
+#contact-container .contact-addr p{
+	margin-bottom:0px;
+}
+#contact-container .contact-addr p span{
+	font-family:WhitneyLight;
+}
+#contact-container .contact-addr-arrow{
+	float:right;
+}
+#contact-container .contact-addr-arrow img{
+	height: 18px;
+    padding-right: 10px;
+    margin-top: 30px;
+}
+#contact-container .panel-top-left{
+	float:left;
+}
+#contact-container .panel-top-left p:nth-child(2){
+	color:#000;
+}
+#contact-container .panel-top-right{
+	float:right;
+	color:#808182;
+	padding-right: 10px;
+}
+#contact-container .panel-bottom{
+	padding-top:5px;
+}
+#contact-container .panel-like{
+	padding: 5px 5px 10px 15px;
+}
+#contact-container .panel-policies{
+	padding: 0 0 10px 15px;
+	font-family:WhitneyBook;
+}
+#contact-container .panel-policies p{
+	margin-bottom:0;
+}
+#contact-container .panel-policies button{
+	margin-top: 12px;
+	background-color: rgb(0, 3, 106);
+	border: medium none;
+	color: rgb(255, 255, 255);
+	padding: 8px 28px;
+	border-radius: 20px;
+	font-family:WhitneyMedium;
+}
+
+
+.viewmap
+{
+	color:#000;
+	float:right;
+	padding-right:10px;
+	font-family:WhitneyLight;
+}
+.panel-title{
+	display:inline-block;
+}
+
+
+
+/** contact list footer **/
+
+/********************************/
+
+
+.color-black{
+	color:#000;
+}
+.color-blue{
+	color:#000099;
+}
+.color-grey{
+	color:#808182;
+}
+
+.remove{
+	background-color:black;
+	float:right;
+}
+
+/* Modification for desktop view--- needs to be kept in tablet css */
+
+
+@media only screen and (min-width:768px) {
+	
+	.contact-header .header-content{
+		padding-top: 5px;
+		padding-bottom: 10px;
+		text-align: center;
+	}
+	
+	.contact-footer{
+		padding: 5px;
+	}
+}
+

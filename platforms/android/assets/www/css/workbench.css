@@ -1,0 +1,365 @@
+
+
+@font-face {
+	font-family: 'WhitneyBook';
+	src: url('../fonts/WhitneyFontsWoff/WhitneyBook.WOFF');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'WhitneyLight';
+	src: url('../fonts/WhitneyFontsWoff/WhitneyLight.WOFF');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'WhitneyMedium';
+	src: url('../fonts/WhitneyFontsWoff/WhitneyMedium.WOFF');
+	font-weight: normal;
+	font-style: normal;
+}
+ul, li {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+body{
+	background-color:rgb(1,0,94);
+	font-size:16px;
+	color: #fff;
+}
+.changecss
+{
+	background-color:black;
+}
+.selectedFav{
+    background:#4c579a;
+}
+.wb-titles.wb-toolbox
+{
+	margin-top: 9px;
+}
+
+.wb-titles{
+	background-color:rgba(1,0,94,0.5);
+	padding: 8px 15px;
+}
+.wb-titles img{
+	width:24px;
+}
+.wb-titles p{
+	margin: 0;
+	font-size: 15px;
+	font-family: WhitneyBook;
+	color:#fff;
+
+}
+.wb-headers p {
+	margin: 0;
+	font-size: 16px;
+	font-family: whitneyBook;
+	font-weight: lighter;
+}
+.wb-headers {
+	display: block;
+	width: 118px;
+	margin: 0 auto;
+}
+.pma-landing .header-agent
+{
+
+	width:99px;
+}
+
+.pma-content{
+padding-top:50px;
+}
+
+.row{
+	margin-left: 0;
+	margin-right: 0;
+}
+.common-header {
+	height: 55px;
+	background-color: #010066;
+    position: fixed;
+    width: 100%;
+}
+.wb_sync{
+	display: block;
+	position: absolute;
+	right:10px;
+	top: 10px;
+}
+1.1wb_edit
+{
+position: absolute;
+    left: 340px;
+    top: 61px;
+}	
+
+
+.wb_sync img
+{
+	width:32px;
+}
+
+/*
+.pma-content .tiles{
+	1background-color:#010066;
+	}*/
+
+	.pma-content .tile-content{
+		1margin: 0px 0px 13px;
+		padding: 18px 17px;
+	}
+
+	.pma-content .tile{
+		height:95px;
+		border-right: 1px solid #2f3083;
+		border-bottom: 1px solid #2f3083;
+		text-align: center;
+		padding:0px 25px 0px;
+	
+	}
+	
+	.pma-content .land-agent .tile
+	{
+		padding:14px 22px 0px;
+	}
+	.pma-content .tile img{
+		height: 30px;
+	}
+	.pma-content .tile p{
+		padding-top: 10px;
+		margin: 0 auto;
+		font-size:10px;
+		color: #fff;
+		font-family: WhitneyLight;
+
+	}
+
+.pma-content .tile:nth-child(3n+4){
+    clear:both;
+}
+	.pma-content .row div:nth-child(3n+0) {
+		border-right:none;
+	}
+	.pma-content .tile-content div:nth-last-child(-n+3){
+		border-bottom:none;
+		height:90px;
+		padding-top: 20px;
+	}
+	.pma-content .land-agent .tile-content div:nth-child(-n+3)
+	{
+		padding-top:0px;
+	}
+	
+	.pma-content  .land-manager .tile-content div:nth-last-child(-n+3)
+	{
+		height:90px;
+	}
+		
+	.pma-content #land_agentView .tile-content div:nth-last-child(-n+3){
+		border-bottom:none;
+		height:90px;
+	}
+
+	.pma-landing
+	{
+		background:url("../images/rsz_bg_workbench_iphone.png");	
+		background-position:0px 0px;
+		background-size:cover;
+		background-attachment: fixed;
+	}
+	.pma-landing .wb-header-toggle{
+	/*padding-top:12px;*/
+	display: block;
+    position: absolute;
+    top: 7px;
+    left: 10px;
+	font-family: WhitneyBook;
+}
+.pma-landing .wb_header {
+	position: fixed;
+    top: 0;
+    width: 100%;
+    z-index:999;
+
+    height: 50px;
+    line-height:33px;
+   
+    color: #fff;
+    font-size: 16px;
+    font-family: WhitneyLight;
+}
+	
+.wb-save p{
+
+    display: block;
+    position: absolute;
+    right: 10px;
+        bottom: 0px;
+    font-family: whitneyBook;
+}
+
+.wb-header-toggle img.wb-back {
+    width: 24px;
+    height: 16px;
+    margin-bottom: 3px;
+    margin-top: -1px;
+}
+a{
+    text-decoration: none !important;
+}
+	/******************** favourities page *******************/
+	.wb-headers_fav
+{
+	display: block;
+	width: 140px;
+	margin: 0 auto;
+}
+.wb-headers_fav p
+{
+	margin: 0;
+	font-size: 16px;
+	font-family: whitneyBook;
+	font-weight: lighter;
+	text-align:center;
+
+}
+.fav-content
+{
+	padding-top:50px;
+	z-index:99;
+}
+.fav-content .favourities-check{
+	padding: 14px 0 14px 0;
+	border-bottom:1px solid #4c509a;
+	margin-left:15px;
+
+}
+.fav-content .favourities-check img{
+    height: 18px;
+   }
+.fav-content .favourities-check p{
+	margin:0;
+	padding-left: 15px;
+	font-size: 14px;
+	/*padding-top: 5px;*/
+	color: #fff;
+	font-family: WhitneyBook;
+}
+
+
+
+
+/****favourites checkbox****/
+.fav-content .checked{
+	background: url("../images/Workbench_icons/SVGs/checkboxactive_blue.svg") no-repeat;
+	height:20px; 
+	background-size:100% 100%;
+}
+.fav-content .unchecked{
+	background: url("../images/Workbench_icons/SVGs/checkboxnormal_white.svg") no-repeat;
+	height:20px; 
+	background-size:100% 100%;
+}
+
+.fav-content .checkbox_wrapper{
+    position: relative;
+    height: 20px;
+    width: 20px;
+    display:inline-block;
+    
+    margin-right: 15px;
+}
+
+.fav-content input[type="checkbox"] {
+    opacity:0;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.fav-content input[type="checkbox"] + label{
+    background:url('../images/Workbench_icons/SVGs/checkboxnormal_white.svg') no-repeat;
+    background-size:100% 100%;
+    height: 20px;
+    width: 20px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.fav-content input[type="checkbox"]:checked + label{
+    background:url('../images/Workbench_icons/SVGs/checkboxactive_blue.svg') no-repeat;
+    background-size:100% 100%;
+    height: 20px;
+    width: 20px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+	/**************CSS for AgentToolbox-Contactallexpand***************/
+	.wb-title
+	{
+		text-align:center;
+		font-family:WhitneyBook;
+		font-size:18px;
+	}
+	.gradient_bgcolor {
+
+		background: -webkit-linear-gradient(#05369C, #000166); /* For Safari 5.1 to 6.0 */
+		background: -o-linear-gradient(#05369C, #000166); /* For Opera 11.1 to 12.0 */
+		background: -moz-linear-gradient(#05369C, #000166); /* For Firefox 3.6 to 15 */
+		background: linear-gradient(#052F95,#01046b); /* Standard syntax (must be last) */
+	}
+	.fav-content input[type="checkbox"]:checked  + p {
+    background: red;
+    padding:5px 0;
+	font-size:20px;
+}
+	
+	/**** modal-dialog******/
+	.modal-dialog{
+		color:black;	
+	}
+
+	.modal-wb{
+		padding-top:40%;
+		padding-left:15%;
+	}
+	.modal-wb .modal-content{
+		width:80%;
+	}
+	
+	/***one source css***/
+	    .view-title img{
+			width:24px;
+			margin-right:10px;
+		}/*
+		.view-title{
+			width:144px;
+		}*/ 
+		.view-title p{
+		    display: inline;
+		    padding-left:40%;
+		}
+	/*
+	.fav-content input[type=checkbox]:checked  {
+			height:50px;
+   }*/
+
+	/********** iframes ****************/
+
+	iframe{
+		margin-top:50px;
+		border:none;
+	}
